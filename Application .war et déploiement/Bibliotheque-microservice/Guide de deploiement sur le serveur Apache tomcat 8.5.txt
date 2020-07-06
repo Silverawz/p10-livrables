@@ -1,0 +1,35 @@
+Guide de déploiement de l'application
+
+Telechargez et installez Apache Tomcat version 8.5
+
+Lancez ensuite le serveur puis accéder à l'url suivante : 
+http://localhost:8081/
+
+A droite de la page, cliquez sur le bouton "Manager App"
+
+***Si vous n'avez pas créer d'utilisateur***
+
+Pour ce faire, il faudra créer login et un mot de passe dans un fichier xml. (s'ouvre avec un simple wordpad)
+Ce fichier se trouve normalement ici :
+Votre disque dur\Program Files\Apache Software Foundation\Tomcat 8.5\conf\tomcat-users
+
+Une fois ce fichier xml ouvert, rajoutez les deux lignes suivantes juste avant la dernière ligne du 
+fichier xml (La dernière ligne est : "</tomcat-users>")
+
+	<role rolename="manager-gui"/>
+	<user username="admin" password="admin" roles="manager-gui"/>
+
+***si vous avez avez déjà crée un utilisateur***
+
+Vous devriez arriver à la page /manager, elle vous permets de déployer le fichier war.
+Il suffit simplement d'aller dans la rubrique "Deployer" puis Fichier WAR à déployer. Choisissez le fichier war inclut avec
+ce guide. ("Bibliotheque-microservice-0.0.1-SNAPSHOT.war")
+puis cliquez sur déployer.
+
+Un message devrait vous indiquer OK en haut de la page pour confirmer le déploiement.
+
+
+!! ATTENTION !!
+Les anti-virus peuvent bloquer les envois de mail (agent email précisément), il faut le désactiver.
+
+

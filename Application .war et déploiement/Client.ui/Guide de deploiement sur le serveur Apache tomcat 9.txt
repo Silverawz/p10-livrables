@@ -1,0 +1,39 @@
+Guide de déploiement de l'application
+
+Telechargez et installez Apache Tomcat version 9
+
+Lancez ensuite le serveur puis accéder à l'url suivante : 
+http://localhost:8082/
+
+A droite de la page, cliquez sur le bouton "Manager App"
+
+***Si vous n'avez pas créer d'utilisateur***
+
+Pour ce faire, il faudra créer login et un mot de passe dans un fichier xml. (s'ouvre avec un simple wordpad)
+Ce fichier se trouve normalement ici :
+Votre disque dur\Program Files\Apache Software Foundation\Tomcat 9.0\conf\tomcat-users
+
+Une fois ce fichier xml ouvert, rajoutez les deux lignes suivantes juste avant la dernière ligne du 
+fichier xml (La dernière ligne est : "</tomcat-users>")
+
+	<role rolename="manager-gui"/>
+	<user username="admin" password="admin" roles="manager-gui"/>
+
+***si vous avez avez déjà crée un utilisateur***
+
+Vous devriez arriver à la page /manager, elle vous permets de déployer le fichier war.
+Il suffit simplement d'aller dans la rubrique "Deployer" puis Fichier WAR à déployer. Choisissez le fichier war inclut avec
+ce guide. ("Client.ui-0.0.1-SNAPSHOT.war")
+puis cliquez sur déployer.
+
+Un message devrait vous indiquer OK en haut de la page pour confirmer le déploiement.
+
+
+!! ATTENTION !!
+Les anti-virus peuvent bloquer les envois de mail (agent email précisément), il faut le désactiver.
+
+L'application front dépasse les 50 Mo donc il faudra changer dans le serveur tomcat, la taille limite comme ceci 
+->Go to the web.xml of the manager application (for instance it could be under /tomcat7/webapps/manager/WEB-INF/web.xml. 
+Increase the max-file-size and max-request-size:
+
+multipart-config 50MB max max-file-size 92428800 max-file-size max-request-size 92428800 max-request-size file-size-threshold 0 file-size-threshold multipart-config

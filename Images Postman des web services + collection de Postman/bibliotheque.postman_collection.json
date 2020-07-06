@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "d1809f45-a47f-40a6-808c-f64bc0b256d1",
+		"name": "bibliotheque",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Copies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/Bibliotheque-microservice-0.0.1-SNAPSHOT/Copies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"Bibliotheque-microservice-0.0.1-SNAPSHOT",
+						"Copies"
+					]
+				},
+				"description": "liste des copies\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Reservations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/Bibliotheque-microservice-0.0.1-SNAPSHOT/Reservations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"Bibliotheque-microservice-0.0.1-SNAPSHOT",
+						"Reservations"
+					]
+				},
+				"description": "liste des reservations\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/Bibliotheque-microservice-0.0.1-SNAPSHOT/Books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"Bibliotheque-microservice-0.0.1-SNAPSHOT",
+						"Books"
+					]
+				},
+				"description": "liste des books"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
